@@ -1,0 +1,217 @@
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --nu-red:#C8102E;
+  --nu-navy:#1d3a5c;
+  --page-bg:#f0f0f0;
+  --border-rule:#d0d0d0;
+  --text-muted:#444444;
+  --focus:3px solid #C8102E;
+  --sec1-head:#2d6a4f;--sec1-text:#1b4332;--sec1-card:#eaf5ee;--sec1-border:#a8d5b5;--sec1-hover:#d4edda;
+  --sec2-head:#7d5a00;--sec2-text:#5a3e00;--sec2-card:#fdf4da;--sec2-border:#e0c87a;--sec2-hover:#fae9b4;
+  --sec3-head:#9a0c22;--sec3-text:#6b0817;--sec3-card:#fdf0f0;--sec3-border:#e8a0a0;--sec3-hover:#f9d6d6;
+  --sec4-head:#4a2c7a;--sec4-text:#311d54;--sec4-card:#f2eef9;--sec4-border:#c0a8e8;--sec4-hover:#e4d8f5;
+}
+.nu-redbar{height:6px;background:#C8102E}
+.nu-header{background:#ffffff;padding:12px 24px;display:flex;align-items:center;gap:16px;border-bottom:1px solid #e0e0e0}
+.nu-logo-n{width:28px;height:28px;background:#C8102E;border-radius:3px;display:flex;align-items:center;justify-content:center;font-family:'Lato',sans-serif;font-weight:900;font-size:1.1rem;color:#fff;flex-shrink:0}
+.nu-wordmark{font-family:'Lato',sans-serif;font-size:.78rem;font-weight:700;color:#1d3a5c;line-height:1.25}
+.nu-wordmark span{display:block;font-weight:400;color:#444}
+.nu-header-rule{flex:1}
+.nu-back{font-size:.78rem;color:#1d3a5c;text-decoration:underline;font-family:'Lato',sans-serif}
+.nu-back:hover,.nu-back:focus{color:#152b47}
+.nu-back:focus-visible{outline:var(--focus);outline-offset:2px;border-radius:2px}
+.nu-announce{background:#dde9e4;padding:8px 24px;font-family:'Lato',sans-serif;font-size:.8rem;color:#1b3a2e;text-align:center;border-bottom:1px solid #c4d9d0}
+.nu-body{background:var(--page-bg);padding:24px 20px 56px;font-family:'Lato',sans-serif}
+.nu-content{max-width:960px;margin:0 auto;background:#ffffff;border-left:4px solid var(--nu-navy);padding:28px 32px 36px;border-radius:0 4px 4px 0}
+.nu-breadcrumb{font-size:.78rem;color:#555;margin-bottom:12px}
+.nu-breadcrumb a{color:var(--nu-navy);text-decoration:underline}
+.nu-breadcrumb a:focus-visible{outline:var(--focus);outline-offset:2px}
+.nu-eyebrow{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--nu-navy);margin-bottom:6px}
+.nu-h1{font-family:'Lato',sans-serif;font-size:clamp(1.4rem,3vw,1.9rem);font-weight:900;color:var(--nu-navy);margin-bottom:10px}
+.nu-h1-rule{border:none;border-top:2px solid var(--nu-navy);margin-bottom:20px}
+.nu-lead{font-size:.93rem;line-height:1.7;color:var(--text-muted);max-width:600px;margin-bottom:24px}
+.nu-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:580px){.nu-grid{grid-template-columns:1fr}}
+.nu-quad{background:#fff;border-radius:6px;border:1px solid var(--border-rule);overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+.nu-qhead{padding:9px 14px;font-size:.67rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff}
+.q1 .nu-qhead{background:var(--sec1-head)}.q2 .nu-qhead{background:var(--sec2-head)}
+.q3 .nu-qhead{background:var(--sec3-head)}.q4 .nu-qhead{background:var(--sec4-head)}
+.nu-qbody{padding:12px}
+.nu-items{display:grid;grid-template-columns:repeat(auto-fill,minmax(118px,1fr));gap:6px}
+.nu-btn{display:block;width:100%;padding:8px 7px;border-radius:4px;font-family:'Lato',sans-serif;font-size:.72rem;font-weight:700;line-height:1.4;text-align:center;cursor:pointer;border:1.5px solid transparent;transition:background .1s,border-color .1s,transform .1s}
+.nu-btn:hover{transform:translateY(-1px)}.nu-btn:active{transform:translateY(0)}
+.nu-btn:focus-visible{outline:var(--focus);outline-offset:2px}
+.q1 .nu-btn{color:var(--sec1-text);background:var(--sec1-card);border-color:var(--sec1-border)}
+.q1 .nu-btn:hover{background:var(--sec1-hover);border-color:var(--sec1-head)}
+.q2 .nu-btn{color:var(--sec2-text);background:var(--sec2-card);border-color:var(--sec2-border)}
+.q2 .nu-btn:hover{background:var(--sec2-hover);border-color:var(--sec2-head)}
+.q3 .nu-btn{color:var(--sec3-text);background:var(--sec3-card);border-color:var(--sec3-border)}
+.q3 .nu-btn:hover{background:var(--sec3-hover);border-color:var(--sec3-head)}
+.q4 .nu-btn{color:var(--sec4-text);background:var(--sec4-card);border-color:var(--sec4-border)}
+.q4 .nu-btn:hover{background:var(--sec4-hover);border-color:var(--sec4-head)}
+.nu-hint{margin-top:9px;font-size:.66rem;color:#777;text-align:center}
+.nu-overlay{display:none;position:fixed;inset:0;background:rgba(10,8,6,.6);z-index:500;align-items:center;justify-content:center;padding:16px}
+.nu-overlay.open{display:flex}
+.nu-modal{background:#fff;border-radius:6px;border-top:5px solid var(--nu-navy);padding:28px 28px 24px;max-width:420px;width:100%;box-shadow:0 16px 48px rgba(0,0,0,.25);position:relative;max-height:90vh;overflow-y:auto;animation:nu-pop .18s ease-out}
+@keyframes nu-pop{from{opacity:0;transform:translateY(10px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+.nu-close{position:absolute;top:12px;right:12px;width:32px;height:32px;border-radius:50%;border:1px solid #ccc;background:#fff;color:#333;font-size:.95rem;cursor:pointer;display:flex;align-items:center;justify-content:center;font-family:'Lato',sans-serif;transition:background .12s}
+.nu-close:hover{background:#f0f0f0}
+.nu-close:focus-visible{outline:var(--focus);outline-offset:2px}
+.nu-mtag{display:inline-block;font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 7px;border-radius:3px;margin-bottom:8px}
+.nu-mtitle{font-size:1.15rem;font-weight:900;line-height:1.2;color:var(--nu-navy);margin-bottom:8px;padding-right:28px}
+.nu-mdesc{font-size:.87rem;line-height:1.7;color:var(--text-muted);margin-bottom:16px}
+.nu-mlinks{display:flex;flex-direction:column;gap:7px}
+.nu-mlink{display:flex;align-items:center;gap:8px;padding:10px 13px;border-radius:5px;font-size:.83rem;font-weight:700;text-decoration:none;border:1.5px solid transparent;transition:background .12s,transform .1s}
+.nu-mlink:hover{transform:translateX(2px)}
+.nu-mlink:focus-visible{outline:var(--focus);outline-offset:2px}
+.nu-marr{margin-left:auto;font-size:.9rem}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+</style>
+
+<div role="main">
+  <div class="nu-redbar" aria-hidden="true"></div>
+  <header class="nu-header">
+    <div class="nu-logo-n" aria-hidden="true">N</div>
+    <div class="nu-wordmark">Northeastern University<span>Library</span></div>
+    <div class="nu-header-rule"></div>
+    <a class="nu-back" href="https://library.northeastern.edu/">← Library Home</a>
+  </header>
+  <div class="nu-announce" role="note">
+    Interested in participating in library user research? <a href="https://library.northeastern.edu/library-user-research-pool/" style="color:#1d3a5c;font-weight:700">Fill out this short form</a>.
+  </div>
+  <div class="nu-body">
+    <div class="nu-content">
+      <nav aria-label="Breadcrumb" class="nu-breadcrumb">
+        <a href="https://library.northeastern.edu/">Home</a> » Research Lifecycle Support
+      </nav>
+      <p class="nu-eyebrow">Research and Scholarship Outside the Classroom</p>
+      <h1 class="nu-h1">Research Lifecycle Support at the Library</h1>
+      <hr class="nu-h1-rule">
+      <p class="nu-lead">From your first research question to your final publication, the Northeastern University Library has the expertise and resources to move your work forward. Select any topic to explore what we offer.</p>
+
+      <section aria-label="Research Lifecycle Stages">
+        <div class="nu-grid">
+
+          <div class="nu-quad q1">
+            <div class="nu-qhead" id="qh1">Exploring and Organizing</div>
+            <div class="nu-qbody">
+              <div class="nu-items" role="list" aria-labelledby="qh1">
+                <button role="listitem" class="nu-btn" aria-haspopup="dialog" onclick='openM("Exploring and Organizing","sec1","Find Grants &amp; Data","Discover funding opportunities and datasets to kick off your research.",[{l:"Find Grants",u:"https://subjectguides.lib.neu.edu/az/databases?t=50533"},{l:"Find Data",u:"https://subjectguides.lib.neu.edu/az/databases?t=50530"}])'>Find Grants &amp; Data</button>
+                <button role="listitem" class="nu-btn" aria-haspopup="dialog" onclick='openM("Exploring and Organizing","sec1","Create Data Management &amp; Sharing Plans","Build compliant data management and sharing plans for your project.",[{l:"Data Management &amp; Sharing Plans",u:"https://subjectguides.lib.neu.edu/datamanagement"}])'>Create Data Management &amp; Sharing Plans</button>
+                <button role="listitem" class="nu-btn" aria-haspopup="dialog" onclick='openM("Exploring and Organizing","sec1","Access Standards &amp; Patents","Search technical standards and patent databases relevant to your field.",[{l:"Access Standards",u:"https://subjectguides.lib.neu.edu/standards"},{l:"Access Patents",u:"https://subjectguides.lib.neu.edu/patents"}])'>Access Standards &amp; Patents</button>
+                <button role="listitem" class="nu-btn" aria-haspopup="dialog" onclick='openM("Exploring and Organizing","sec1","Find, Track, &amp; Cite Research","Connect with subject librarians to discover, organize, and cite the literature that matters to your work.",[{l:"Subject Librarians",u:"https://library.northeastern.edu/research_instruction/subject-librarians/"}])'>Find, Track, &amp; Cite Research</button>
+              </div>
+              <p class="nu-hint" aria-hidden="true">Select a topic to explore resources</p>
+            </div>
+          </div>
+
+          <div class="nu-quad q2">
+            <div class="nu-qhead" id="qh2">Collecting and Analyzing</div>
+            <div class="nu-qbody">
+              <div class="nu-items" role="list" aria-labelledby="qh2">
+                <button role="listitem" class="nu-btn" aria-haspopup="dialog" onclick='openM("Collecting and Analyzing","sec2","Manage Your Data","Store, organize, and steward your research data with help from the Library.",[{l:"Research Data Services",u:"https://library.northeastern.edu/data_services/research-data-services/"}])'>Manage Your Data</button>
+                <button role="listitem" class="nu-btn" aria-haspopup="dialog" onclick='openM("Collecting and Analyzing","sec2","Data Analysis &amp; Programming","Use tools, guides, and Library consultations for data analysis and programming support.",[{l:"Data Analysis &amp; Programming",u:"https://subjectguides.lib.neu.edu/DataAnalysis/"}])'>Data Analysis &amp; Programming</button>
+                <button role="listitem" class="nu-btn" aria-haspopup="dialog" onclick='openM("Collecting and Analyzing","sec2","Visualize Your Data","Create charts, graphs, and visual representations of your research data.",[{l:"Data Visualization Guide",u:"https://subjectguides.lib.neu.edu/dataviz"}])'>Visualize Your Data</button>
+                <button role="listitem" class="nu-btn" aria-haspopup="dialog" onclick='openM("Collecting and Analyzing","sec2","GIS &amp; Text Analysis","Explore geographic information systems and text data mining tools.",[{l:"GIS Guide",u:"https://subjectguides.lib.neu.edu/gis"},{l:"Text Analysis Guide",u:"https://subjectguides.lib.neu.edu/textdatamining"}])'>GIS &amp; Text Analysis</button>
+                <button role="listitem" class="nu-btn" aria-haspopup="dialog" onclick='openM("Collecting and Analyzing","sec2","Evidence Syntheses","Work with Library experts on systematic reviews, scoping reviews, and meta-analyses.",[{l:"Evidence Synthesis Service",u:"https://library.northeastern.edu/research_instruction/evidence-synthesis-service/"}])'>Evidence Syntheses</button>
+              </div>
+              <p class="nu-hint" aria-hidden="true">Select a topic to explore resources</p>
+            </div>
+          </div>
+
+          <div class="nu-quad q3">
+            <div class="nu-qhead" id="qh3">Research Impact and Engagement</div>
+            <div class="nu-qbody">
+              <div class="nu-items" role="list" aria-labelledby="qh3">
+                <button role="listitem" class="nu-btn" aria-haspopup="dialog" onclick='openM("Research Impact and Engagement","sec3","Monitor Your Research Impact","Use resources like Overton to track your research\u2019s influence on policy.",[{l:"Overton Database",u:"https://subjectguides.lib.neu.edu/az/databases?q=overton"}])'>Monitor Your Research Impact</button>
+                <button role="listitem" class="nu-btn" aria-haspopup="dialog" onclick='openM("Research Impact and Engagement","sec3","Track Your Citation Network","Use Scopus and/or Web of Science to track citations attached to your published research.",[{l:"Scopus",u:"https://subjectguides.lib.neu.edu/az/databases?q=scopus"},{l:"Web of Science",u:"https://subjectguides.lib.neu.edu/az/databases?q=web%20of%20science,%20all%20databases"}])'>Track Your Citation Network</button>
+                <button role="listitem" class="nu-btn" aria-haspopup="dialog" onclick='openM("Research Impact and Engagement","sec3","DOIs and ORCIDs","Persistent identifiers make it easy for yourself and others to find and track your research. Visit our Publishing page to learn more about how the Library can help.",[{l:"Publishing Page",u:"https://library.northeastern.edu/research_instruction/publishing/"}])'>DOIs and ORCIDs</button>
+                <button role="listitem" class="nu-btn" aria-haspopup="dialog" onclick='openM("Research Impact and Engagement","sec3","Overton, Web of Science, &amp; Scopus","Access these and many other databases on our library website.",[{l:"Library Databases",u:"https://subjectguides.lib.neu.edu/az/databases"}])'>Overton, Web of Science, &amp; Scopus</button>
+              </div>
+              <p class="nu-hint" aria-hidden="true">Select a topic to explore resources</p>
+            </div>
+          </div>
+
+          <div class="nu-quad q4">
+            <div class="nu-qhead" id="qh4">Outputs and Publications</div>
+            <div class="nu-qbody">
+              <div class="nu-items" role="list" aria-labelledby="qh4">
+                <button role="listitem" class="nu-btn" aria-haspopup="dialog" onclick='openM("Outputs and Publications","sec4","Archive, Preserve, &amp; Share Your Data","Deposit, preserve, and make your research data discoverable via the repository.",[{l:"Northeastern Repository",u:"https://repository.library.northeastern.edu/"}])'>Archive, Preserve, &amp; Share Your Data</button>
+                <button role="listitem" class="nu-btn" aria-haspopup="dialog" onclick='openM("Outputs and Publications","sec4","Choose a Publication Venue","Find the right journal or publisher with guidance from our librarians.",[{l:"Publishing Guide",u:"https://subjectguides.lib.neu.edu/publishing"}])'>Choose a Publication Venue</button>
+                <button role="listitem" class="nu-btn" aria-haspopup="dialog" onclick='openM("Outputs and Publications","sec4","Author Processing Charges","Understand open access fees and explore funding options for article processing charges (APCs).",[{l:"Open Access Publishing",u:"https://library.northeastern.edu/resource_discovery/open-access-publishing/"}])'>Author Processing Charges</button>
+                <button role="listitem" class="nu-btn" aria-haspopup="dialog" onclick='openM("Outputs and Publications","sec4","Identify Predatory Publishers/Journals","Evaluate publishers and avoid deceptive or predatory journals.",[{l:"Deceptive Publishing Guide",u:"https://subjectguides.lib.neu.edu/publishing/deceptivepublishing"}])'>Identify Predatory Publishers/Journals</button>
+              </div>
+              <p class="nu-hint" aria-hidden="true">Select a topic to explore resources</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
+<div class="nu-overlay" id="nu-ov" role="dialog" aria-modal="true" aria-labelledby="nu-mtitle" aria-hidden="true" onclick="if(event.target===this)closeM()">
+  <div class="nu-modal" id="nu-modal">
+    <button class="nu-close" id="nu-close" aria-label="Close dialog" onclick="closeM()">&#x2715;</button>
+    <span class="nu-mtag" id="nu-mtag" aria-hidden="true"></span>
+    <h2 class="nu-mtitle" id="nu-mtitle"></h2>
+    <p class="nu-mdesc" id="nu-mdesc"></p>
+    <div class="nu-mlinks" id="nu-mlinks"></div>
+  </div>
+</div>
+
+<script>
+const T={
+  sec1:{tb:'#eaf5ee',tc:'#1b4332',lb:'#eaf5ee',lc:'#1b4332',lbr:'#a8d5b5',lh:'#d4edda'},
+  sec2:{tb:'#fdf4da',tc:'#5a3e00',lb:'#fdf4da',lc:'#5a3e00',lbr:'#e0c87a',lh:'#fae9b4'},
+  sec3:{tb:'#fdf0f0',tc:'#6b0817',lb:'#fdf0f0',lc:'#6b0817',lbr:'#e8a0a0',lh:'#f9d6d6'},
+  sec4:{tb:'#f2eef9',tc:'#311d54',lb:'#f2eef9',lc:'#311d54',lbr:'#c0a8e8',lh:'#e4d8f5'}
+};
+const FOCUSABLE='a[href],button:not([disabled]),[tabindex]:not([tabindex="-1"])';
+let lastFocus=null;
+function openM(section,sk,title,desc,links){
+  lastFocus=document.activeElement;
+  const t=T[sk]||T.sec1;
+  const tag=document.getElementById('nu-mtag');
+  tag.textContent=section;tag.style.background=t.tb;tag.style.color=t.tc;
+  document.getElementById('nu-mtitle').innerHTML=title;
+  document.getElementById('nu-mdesc').textContent=desc;
+  const el=document.getElementById('nu-mlinks');el.innerHTML='';
+  links.forEach(l=>{
+    const a=document.createElement('a');
+    a.href=l.u;a.target='_blank';a.rel='noopener noreferrer';
+    a.className='nu-mlink';
+    a.style.background=t.lb;a.style.color=t.lc;a.style.borderColor=t.lbr;
+    a.setAttribute('aria-label',l.l.replace(/&amp;/g,'&')+', opens in new tab');
+    a.innerHTML=l.l+'<span class="nu-marr" aria-hidden="true">↗</span>';
+    a.addEventListener('mouseenter',()=>{a.style.background=t.lh;});
+    a.addEventListener('mouseleave',()=>{a.style.background=t.lb;});
+    el.appendChild(a);
+  });
+  const ov=document.getElementById('nu-ov');
+  ov.setAttribute('aria-hidden','false');ov.classList.add('open');
+  ov.addEventListener('keydown',onKey);
+  setTimeout(()=>document.getElementById('nu-close').focus(),30);
+}
+function onKey(e){
+  if(e.key==='Escape'){closeM();return;}
+  if(e.key==='Tab'){
+    const m=document.getElementById('nu-modal');
+    const f=Array.from(m.querySelectorAll(FOCUSABLE));
+    if(!f.length)return;
+    const first=f[0],last=f[f.length-1];
+    if(e.shiftKey){if(document.activeElement===first){e.preventDefault();last.focus();}}
+    else{if(document.activeElement===last){e.preventDefault();first.focus();}}
+  }
+}
+function closeM(){
+  const ov=document.getElementById('nu-ov');
+  ov.setAttribute('aria-hidden','true');ov.classList.remove('open');
+  ov.removeEventListener('keydown',onKey);
+  if(lastFocus)lastFocus.focus();
+}
+</script>
